@@ -243,6 +243,13 @@ g_PluginInfo =
 			HelpString = "Shows or sets a player's rank.",
 		},
 
+		["/scoreboard"] =
+		{
+			Permission = "core.scoreboard",
+			Handler = HandleScoreboardCommand,
+			HelpString = "Manages scoreboards",
+		},
+
 		["/op"] =
 		{
 			Permission = "core.rank",
