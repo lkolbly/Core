@@ -354,6 +354,24 @@ end
 
 
 
+function HandleConsoleSaveOff(Split)
+	cRoot:Get():SetSavingEnabled(false)
+	return true
+end
+
+
+
+
+
+function HandleConsoleSaveOn(Split)
+	cRoot:Get():SetSavingEnabled(true)
+	return true
+end
+
+
+
+
+
 function HandleConsoleSay(a_Split)
 	cRoot:Get():BroadcastChat(cChatColor.Gold .. "[SERVER] " .. cChatColor.Yellow .. table.concat(a_Split, " ", 2))
 	return true

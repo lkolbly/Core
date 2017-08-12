@@ -278,6 +278,20 @@ g_PluginInfo =
 			HelpString = "Saves all worlds.",
 		},
 
+		["/save-off"] =
+		{
+			Permission = "core.save-off",
+			Handler = HandleSaveOffCommand,
+			HelpString = "Disabled saving all worlds.",
+		},
+
+		["/save-on"] =
+		{
+			Permission = "core.save-on",
+			Handler = HandleSaveOnCommand,
+			HelpString = "Enables saving all worlds.",
+		},
+
 		["/say"] = 
 		{
 			Permission = "core.say",
@@ -812,6 +826,18 @@ g_PluginInfo =
 		{
 			Handler =  HandleConsoleSaveAll,
 			HelpString = "Saves all worlds.",
+		},
+
+		["save-off"] =
+		{
+			Handler =  HandleConsoleSaveOff,
+			HelpString = "Disables saving all world chunks.",
+		},
+
+		["save-on"] =
+		{
+			Handler =  HandleConsoleSaveOn,
+			HelpString = "Enables saving all world chunks.",
 		},
 
 		["seed"] =
