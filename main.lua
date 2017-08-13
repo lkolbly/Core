@@ -16,6 +16,7 @@ g_UsePrefixes = true
 
 
 -- Global variables
+PLUGIN = nil
 Messages = {}
 WorldsSpawnProtect = {}
 WorldsWorldLimit = {}
@@ -27,6 +28,8 @@ lastsender = {}
 
 -- Called by Cuberite on plugin start to initialize the plugin
 function Initialize(Plugin)
+	PLUGIN = Plugin
+
 	Plugin:SetName("Core")
 	Plugin:SetVersion(tonumber(g_PluginInfo["Version"]))
 

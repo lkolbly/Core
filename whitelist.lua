@@ -461,7 +461,7 @@ end
 local function InitializeDB()
 	-- Open the DB:
 	local ErrMsg
-	WhitelistDB, ErrMsg = NewSQLiteDB("whitelist.sqlite")
+	WhitelistDB, ErrMsg = NewSQLiteDB(PLUGIN:GetDataFolder().."whitelist.sqlite")
 	if not(WhitelistDB) then
 		LOGWARNING("Cannot open the whitelist database, whitelist not available. SQLite: " .. (ErrMsg or "<no details>"))
 		error(ErrMsg)

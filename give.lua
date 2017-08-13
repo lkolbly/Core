@@ -496,7 +496,7 @@ function IntializeItemBlacklist( Plugin )
 	}
 
 	-- First, try to open the Item BlackList file if it exists
-	local ItemBlackListFile, ErrMsg = io.open( BlackListFileName, "rb" )
+	local ItemBlackListFile, ErrMsg = io.open( PLUGIN:GetConfigFolder()..BlackListFileName, "rb" )
 
 	if ItemBlackListFile then
 
@@ -520,7 +520,7 @@ function IntializeItemBlacklist( Plugin )
 	else
 
 		-- If we couldn't read the file, then try to create the file with the default blacklist
-		ItemBlackListFile, ErrMsg = io.open( BlackListFileName, "wb" )
+		ItemBlackListFile, ErrMsg = io.open( PLUGIN:GetConfigFolder()..BlackListFileName, "wb" )
 
 		if ItemBlackListFile then
 
@@ -535,7 +535,7 @@ function IntializeItemBlacklist( Plugin )
 
 		else
 			-- If we can't create the file, log it
-			LOG( string.format( BlackListFileCreationError, Plugin:GetName(), BlackListFileName, ( ErrMsg or MessageUnknownError ) ) )
+			LOG( string.format( BlackListFileCreationError, Plugin:GetName(), PLUGIN:GetConfigFolder()..BlackListFileName, ( ErrMsg or MessageUnknownError ) ) )
 		end
 
 		ItemBlackList = DefaultBlackList

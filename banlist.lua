@@ -412,7 +412,7 @@ end
 local function InitializeDB()
 	-- Open the DB:
 	local ErrMsg
-	BanlistDB, ErrMsg = NewSQLiteDB("banlist.sqlite")
+	BanlistDB, ErrMsg = NewSQLiteDB(PLUGIN:GetDataFolder().."banlist.sqlite")
 	if not(BanlistDB) then
 		LOGWARNING("Cannot open the banlist database, banlist not available. SQLite: " .. (ErrMsg or "<no details>"))
 		error(ErrMsg)
